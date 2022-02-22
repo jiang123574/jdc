@@ -1,0 +1,6 @@
+requests
+markdown
+pytz
+pymysql
+sqlalchemy
+pandas
