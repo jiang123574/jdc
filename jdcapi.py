@@ -1,4 +1,3 @@
-import sqlapi
 import json
 import requests
 import datetime

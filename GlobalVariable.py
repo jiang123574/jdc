@@ -1,5 +1,5 @@
 import os
-
+import configparser
 # 全局参数
 # API
 jd_base_url = "https://router-app-api.jdcloud.com/v1/regions/cn-north-1/"
@@ -54,3 +54,11 @@ hmacKey = "706390cef611241d57573ca601eb3c061e174948"
 # 请求体
 service_body = '{"feed_id":"%s","command":[{"current_value":{"cmd":"%s"},"stream_id":"SetParams"}]}'
 
+def config():
+    cp = configparser.RawConfigParser()
+    cp.read('/jdc/data/config/config.ini')
+    sqlservice = cp.get('sql', 'sql')
+    tgt = cp.get('jdc', 'WSKEY')
+    return sqlservice, tgt
+
+sqlservice, tgt=config()
